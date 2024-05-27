@@ -7,19 +7,23 @@ import { Product } from '../../../../shared/interfaces/product.interface';
   selector: 'app-card',
   standalone: true,
   imports: [MatCardModule, MatButtonModule],
-  
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss'
 })
 export class CardComponent {
 
   product = input.required<Product>();
-  
+
   @Output() edit = new EventEmitter();
+  @Output() delete = new EventEmitter();
 
   productTitle = computed(() => this.product().title);
 
-  onEdit(){
+  onEdit() {
     this.edit.emit();
+  }
+
+  onDelete() {
+    this.delete.emit();
   }
 }

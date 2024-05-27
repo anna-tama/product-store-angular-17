@@ -5,7 +5,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { ProductsService } from '../../services/products/products.service';
+import { ProductsService } from '../../services/products.service';
 import { Product } from '../../interfaces/product.interface';
 
 @Component({

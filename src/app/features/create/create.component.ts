@@ -3,7 +3,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { ProductsService } from '../../shared/services/products/products.service';
+import { ProductsService } from '../../shared/services/products.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { FormComponent } from '../../shared/components/form/form.component';
@@ -11,7 +11,6 @@ import { FormComponent } from '../../shared/components/form/form.component';
   selector: 'app-create',
   standalone: true,
   imports: [FormComponent],
-  providers: [ProductsService],
   templateUrl: './create.component.html',
   styleUrl: './create.component.scss'
 })

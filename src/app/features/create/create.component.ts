@@ -6,10 +6,11 @@ import { MatInputModule } from '@angular/material/input';
 import { ProductsService } from '../../shared/services/products/products.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { FormComponent } from '../../shared/components/form/form.component';
 @Component({
   selector: 'app-create',
   standalone: true,
-  imports: [ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatButtonModule],
+  imports: [FormComponent],
   providers: [ProductsService],
   templateUrl: './create.component.html',
   styleUrl: './create.component.scss'
@@ -27,9 +28,8 @@ export class CreateComponent {
     }),
   });
 
-  onSubmit() {   
-    this.productsService.post({ title: this.form.controls.title.value })
-    .subscribe(() => {
+  onSubmit(product: any) {   
+    this.productsService.post(product).subscribe(() => {
       this.matSnackBar.open('Producto creado', 'Ok')
       this.router.navigateByUrl('/')
     })
